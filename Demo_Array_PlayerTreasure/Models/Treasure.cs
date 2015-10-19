@@ -6,50 +6,31 @@ using System.Threading.Tasks;
 
 namespace Demo_Array_PlayerTreasure
 {
+
+
     // TODO 01a - add a treasure class
     /// <summary>
-    /// base class for all treasures
+    ///  class for all of the player's treasures
     /// </summary>
     public class Treasure
     {
         #region ENUMERABLES
 
-        // TODO 01b - add an enum of material types for treasures
-        public enum Material
-        {
-            Gold,
-            Silver,
-            Bronze,
-            Diamond,
-            Emerald
-        }
-
-        public enum CoinNames
-        {
-            SmallGoldCoin,
-            SmallSilverCoin,
-            SmallBronzeCoin
-        }
 
         #endregion
 
         #region FIELDS
 
-        // TODO 01c - add a dictionary to hold the values of each material
-        private Dictionary<Material, int> materialValue = new Dictionary<Material, int>();
-
-        // TODO 01h - add a field/property of list of Coin to hold the coin types
-        private List<Coin> _coinTypes;
-
-
-
+        private Coin[] _coins; 
+        
         #endregion
 
         #region PROPERTIES
-        public List<Coin> CoinTypes
+
+        public Coin[] Coins
         {
-            get { return _coinTypes; }
-            set { _coinTypes = value; }
+            get { return _coins; }
+            set { _coins = value; }
         }
 
         #endregion
@@ -58,11 +39,7 @@ namespace Demo_Array_PlayerTreasure
 
         public Treasure()
         {
-            // TODO 01g - call the initialize material values method
-            InitializeMaterialValues();
-
-            // TODO 01h - initialize the coins type list
-            _coinTypes = new List<Coin>();
+            InitializeCoinArray();
 
         }
 
@@ -70,28 +47,34 @@ namespace Demo_Array_PlayerTreasure
 
         #region METHODS
 
-        // TODO 01d - add a method to initialze the material values
-        public void InitializeMaterialValues()
+        public void InitializeCoinArray()
         {
-            materialValue[Material.Gold] = 10;
-            materialValue[Material.Silver] = 5;
-            materialValue[Material.Bronze] = 1;
-            materialValue[Material.Diamond] = 20;
-            materialValue[Material.Emerald] = 15;
+            _coins = new Coin[3];
+
+            _coins[0] = new Coin()
+            {
+                Name = "Small Gold Coin",
+                Description = "Gold coin with the Kings's face on one side and the Castle Wilhelm on the other side.",
+                Type = Coin.TypeName.SmallGoldCoin,
+                ValueInDollars = 10
+            };
+            _coins[1] = new Coin()
+            {
+                Name = "Small Silver Coin",
+                Description = "Silver coin with the Queen's face on one side and the River Thomes on the other side.",
+                Type = Coin.TypeName.SmallSilverCoin,
+                ValueInDollars = 10
+            };
+
+            _coins[2] = new Coin()
+            {
+                Name = "Small Bronze Coin",
+                Description = "Bronze coin with the Prince's face on one side and Mount Fidoria on the other side.",
+                Type = Coin.TypeName.SmallBronzeCoin,
+                ValueInDollars = 10
+            };
         }
 
-
-        // TODO 01f - add a method to return a material's value
-        public int Value(Material materialType)
-        {
-            return materialValue[materialType];
-        }
-
-        // TODO 01i - add a method to calculate the vaule of each coin type
-        public int CoinValue(Coin coin)
-        {
-            return coin.QuantityOfMaterial * materialValue[coin.TypeOfMaterial];
-        }
         #endregion
     }
 }

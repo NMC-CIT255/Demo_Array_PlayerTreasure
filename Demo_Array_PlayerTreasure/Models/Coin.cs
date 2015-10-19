@@ -6,33 +6,56 @@ using System.Threading.Tasks;
 
 namespace Demo_Array_PlayerTreasure
 {
-    // TOD 02 - add a Coin class
-    /// <summary>
-    /// class to create new coins
-    /// </summary>
     public class Coin
     {
         #region ENUMERABLES
 
-
+        public enum TypeName
+        {
+            SmallGoldCoin,
+            SmallSilverCoin,
+            SmallBronzeCoin
+        }
 
         #endregion
+
 
         #region FIELDS
 
-        private Treasure.CoinNames _name;
+        private string _name;
         private string _description;
-        private Treasure.Material _typeOfMaterial;
-        private int _quantitiyOfMaterial;
+        private TypeName _type;
+        private int _valueInDollars;
+        private int _countInPlayerInventory;
+        private int _countInGameInventory;
 
-        #endregion
-
-        #region PROPERTIES
-        public Treasure.CoinNames Name
+        public int CountInGameInventory
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _countInGameInventory; }
+            set { _countInGameInventory = value; }
         }
+        
+
+        public int CountInPlayerInventory
+        {
+            get { return _countInPlayerInventory; }
+            set { _countInPlayerInventory = value; }
+        }
+        
+
+        public int ValueInDollars
+        {
+            get { return _valueInDollars; }
+            set { _valueInDollars = value; }
+        }
+        
+
+        public TypeName Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        
 
         public string Description
         {
@@ -40,28 +63,35 @@ namespace Demo_Array_PlayerTreasure
             set { _description = value; }
         }
 
-        public Treasure.Material TypeOfMaterial
+
+        public string Name
         {
-            get { return _typeOfMaterial; }
-            set { _typeOfMaterial = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
-        public int QuantityOfMaterial
-        {
-            get { return _quantitiyOfMaterial; }
-            set { _quantitiyOfMaterial = value; }
-        }
+
+        #endregion
+
+        #region PROPERTIES
+
+
 
         #endregion
 
         #region CONSTRUCTORS
 
-        public Coin(Treasure.CoinNames name, string description, Treasure.Material typeOfMaterial, int quantityOfMaterial)
+        public Coin()
+        {
+
+        }
+
+        public Coin(string name, string description, TypeName type, int value)
         {
             _name = name;
             _description = description;
-            _typeOfMaterial = typeOfMaterial;
-            _quantitiyOfMaterial = quantityOfMaterial;
+            _type = type;
+            _valueInDollars = value;
         }
 
         #endregion
