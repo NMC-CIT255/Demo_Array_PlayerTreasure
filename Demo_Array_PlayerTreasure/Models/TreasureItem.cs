@@ -23,7 +23,22 @@ namespace Demo_Array_PlayerTreasure.Models
 
         private string _name;
         private string _description;
+        private Category _category;
+        private int value;
 
+        public int Value
+        {
+            get { return value; }
+            set { value = value; }
+        }
+        
+
+        public Category Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
+        
 
         public string Description
         {
