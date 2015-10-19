@@ -22,9 +22,8 @@ namespace Demo_Array_PlayerTreasure
 
         #region FIELDS
 
-        private string _name;
+        private TypeName _name;
         private string _description;
-        private TypeName _type;
         private int _valueInDollars;
         private int _countInPlayerInventory;
         private int _countInGameInventory;
@@ -34,28 +33,20 @@ namespace Demo_Array_PlayerTreasure
             get { return _countInGameInventory; }
             set { _countInGameInventory = value; }
         }
-        
+
 
         public int CountInPlayerInventory
         {
             get { return _countInPlayerInventory; }
             set { _countInPlayerInventory = value; }
         }
-        
+
 
         public int ValueInDollars
         {
             get { return _valueInDollars; }
             set { _valueInDollars = value; }
         }
-        
-
-        public TypeName Type
-        {
-            get { return _type; }
-            set { _type = value; }
-        }
-        
 
         public string Description
         {
@@ -64,7 +55,7 @@ namespace Demo_Array_PlayerTreasure
         }
 
 
-        public string Name
+        public TypeName Name
         {
             get { return _name; }
             set { _name = value; }
@@ -86,12 +77,12 @@ namespace Demo_Array_PlayerTreasure
 
         }
 
-        public Coin(string name, string description, TypeName type, int value)
+        public Coin(TypeName name, string description, int value, int countInGameInventory )
         {
             _name = name;
             _description = description;
-            _type = type;
             _valueInDollars = value;
+            _countInGameInventory = countInGameInventory;
         }
 
         #endregion

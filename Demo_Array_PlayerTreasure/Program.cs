@@ -10,11 +10,11 @@ namespace Demo_Array_PlayerTreasure
     {
         static void Main(string[] args)
         {
-            // TODO 00a - instantiate a player and game treasure objects
+            // TODO  - instantiate a player and game treasure objects
             Treasure gametreasure = new Treasure();
             Player myPlayer = new Player("Bonzo");
 
-            // TODO 03b - call the method to demonstrate managing the player's treasure
+            // TODO  - call the method to demonstrate managing the player's treasure
             DemoTreasureManagement(myPlayer, gametreasure);
 
         }
@@ -32,17 +32,17 @@ namespace Demo_Array_PlayerTreasure
             // TODO 
             DisplayTreasureTypes(gameTreasure);
 
-            // TODO 07b - call the method to give the player some coins at the start of the game
+            // TODO  - call the method to give the player some coins at the start of the game
             GivePlayerCoins(myPlayer, gameTreasure);
 
-            // TODO 08c - call the method to display the player's treasure         
+            // TODO  - call the method to display the player's treasure         
             DisplayPlayersTreasure(myPlayer);
 
             Console.WriteLine("Now let's add 25 gold coins.");
             Console.WriteLine("Press the Enter key to continue.");
             Console.ReadLine();
 
-            // TODO 09b - call the method to add more coins of a specific type to the player's treasure
+            // TODO  - call the method to add more coins of a specific type to the player's treasure
             //AddCoinsToPlayer(myPlayer, gameTreasure, Treasure.CoinNames.SmallGoldCoin, 25);
 
             DisplayPlayersTreasure(myPlayer);
@@ -51,13 +51,13 @@ namespace Demo_Array_PlayerTreasure
             Console.WriteLine("Press the Enter key to continue.");
             Console.ReadLine();
 
-            // TODO 10b - call the method to subtract coins of a specific type from the player's treasure
+            // TODO  - call the method to subtract coins of a specific type from the player's treasure
             //SubtractCoinsFromPlayer(myPlayer, gameTreasure, Treasure.CoinNames.SmallGoldCoin, 10);
 
             DisplayPlayersTreasure(myPlayer);
         }
 
-        // TODO 04a - add a method to initialze the game treasure types
+        // TODO  - add a method to initialze the game treasure types
         /// <summary>
         /// intitialize the type of treasures in the game
         /// </summary>
@@ -66,7 +66,7 @@ namespace Demo_Array_PlayerTreasure
             playerTreasure = new Treasure();
         }
 
-        // TODO 05a - add a DisplayTreasureTypes method
+        // TODO  - add a DisplayTreasureTypes method
         /// <summary>
         /// display all of the treasure types
         /// </summary>
@@ -81,7 +81,6 @@ namespace Demo_Array_PlayerTreasure
             {
                 Console.WriteLine("Coin Name: " + coin.Name);
                 Console.WriteLine("Coin Description: " + coin.Description);
-                Console.WriteLine("Coin Type: " + coin.Type);
                 Console.WriteLine("Coin Value: " + coin.ValueInDollars);
                 Console.WriteLine("Total Coin Count in Game: " + coin.CountInGameInventory);
                 Console.WriteLine();
@@ -91,7 +90,7 @@ namespace Demo_Array_PlayerTreasure
             Console.ReadLine();
         }
 
-        // TODO 07a - add a method to give the player some coins at the start of the game
+        // TODO  - add a method to give the player some coins at the start of the game
         /// <summary>
         /// give the player some coins to start the game
         /// </summary>
@@ -99,11 +98,20 @@ namespace Demo_Array_PlayerTreasure
         /// <param name="gameTreasure"></param>
         public static void GivePlayerCoins(Player myPlayer, Treasure gameTreasure)
         {
+            // add 2 small gold coins
+            for (int coinIndex = 0; coinIndex < gameTreasure.Coins.Length; coinIndex++)
+            {
+                if (gameTreasure.Coins[coinIndex].Name == Coin.TypeName.SmallGoldCoin)
+                {
+                    gameTreasure.Coins[coinIndex].CountInPlayerInventory = 2;
+                }
+            }
+
 
         }
 
 
-        // TODO 08b - add a DisplayPlayerTreasure method
+        // TODO  - add a DisplayPlayerTreasure method
         /// <summary>
         /// display all of the currency types
         /// </summary>
