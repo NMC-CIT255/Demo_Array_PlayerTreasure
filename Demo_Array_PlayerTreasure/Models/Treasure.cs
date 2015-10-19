@@ -56,14 +56,17 @@ namespace Demo_Array_PlayerTreasure
                 Name = "Small Gold Coin",
                 Description = "Gold coin with the Kings's face on one side and the Castle Wilhelm on the other side.",
                 Type = Coin.TypeName.SmallGoldCoin,
-                ValueInDollars = 10
+                ValueInDollars = 10,
+                CountInGameInventory = 50
             };
+
             _coins[1] = new Coin()
             {
                 Name = "Small Silver Coin",
                 Description = "Silver coin with the Queen's face on one side and the River Thomes on the other side.",
                 Type = Coin.TypeName.SmallSilverCoin,
-                ValueInDollars = 10
+                ValueInDollars = 10,
+                CountInGameInventory = 100
             };
 
             _coins[2] = new Coin()
@@ -71,7 +74,8 @@ namespace Demo_Array_PlayerTreasure
                 Name = "Small Bronze Coin",
                 Description = "Bronze coin with the Prince's face on one side and Mount Fidoria on the other side.",
                 Type = Coin.TypeName.SmallBronzeCoin,
-                ValueInDollars = 10
+                ValueInDollars = 10,
+                CountInGameInventory = 500
             };
         }
 

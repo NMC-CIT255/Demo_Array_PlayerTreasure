@@ -26,10 +26,10 @@ namespace Demo_Array_PlayerTreasure
         /// <param name="myPlayer"></param>
         public static void DemoTreasureManagement(Player myPlayer, Treasure gameTreasure)
         {
-            // TODO 04c - call the method to initialze the game treasure types
+            // TODO 
             InitializeTreasures(gameTreasure);
 
-            // TODO 05b - call DisplayTreasureTypes method
+            // TODO 
             DisplayTreasureTypes(gameTreasure);
 
             // TODO 07b - call the method to give the player some coins at the start of the game
@@ -79,19 +79,13 @@ namespace Demo_Array_PlayerTreasure
 
             foreach (Coin coin in gameTreasure.Coins)
             {
-                Console.WriteLine("Currency Name: " + coin.Name);
+                Console.WriteLine("Coin Name: " + coin.Name);
+                Console.WriteLine("Coin Description: " + coin.Description);
+                Console.WriteLine("Coin Type: " + coin.Type);
+                Console.WriteLine("Coin Value: " + coin.ValueInDollars);
+                Console.WriteLine("Total Coin Count in Game: " + coin.CountInGameInventory);
+                Console.WriteLine();
             }
-
-
-
-            //for (Coin coinType in gameTreasure.Coins)
-            //{
-
-            //    Console.WriteLine("Currency Description: " + coinType.Description);
-            //    Console.WriteLine("Currency Base Material: " + coinType.TypeOfMaterial);
-            //    Console.WriteLine("Currency Value: " + gameTreasure.CoinValue(coinType));
-            //    Console.WriteLine();
-            //}
 
             Console.WriteLine("Press the Enter key to continue.");
             Console.ReadLine();
