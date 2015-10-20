@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo_Array_PlayerTreasure
 {
+    // TODO 01 - add a Character class to act as the base class for the Player class
     /// <summary>
     /// base class for player and guests in game
     /// </summary>

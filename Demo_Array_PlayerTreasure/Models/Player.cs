@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Demo_Array_PlayerTreasure
 {
-    // TODO 00a create Player class derived from the Character class
     /// <summary>
     /// Player class, inherites from Character class
     /// </summary>
@@ -19,18 +18,11 @@ namespace Demo_Array_PlayerTreasure
 
         #region FIELDS
 
-        // TODO 06b - add a field/property of list of CoinGroup to the hold the player's coins
-        private List<CoinGroup> _coins;  
 
         #endregion
 
         #region PROPERTIES
         
-        public List<CoinGroup> Coins
-        {
-            get { return _coins; }
-            set { _coins = value; }
-        }
 
         #endregion
 
@@ -45,8 +37,7 @@ namespace Demo_Array_PlayerTreasure
             : base(name)
         {
 
-            _coins = new List<CoinGroup>();
-
+            
         }
 
         #endregion

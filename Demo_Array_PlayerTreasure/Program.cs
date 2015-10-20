@@ -10,40 +10,33 @@ namespace Demo_Array_PlayerTreasure
     {
         static void Main(string[] args)
         {
-            // TODO  - instantiate a player and game treasure objects
             Treasure gametreasure = new Treasure();
             Player myPlayer = new Player("Bonzo");
 
-            // TODO  - call the method to demonstrate managing the player's treasure
+            // call the method to demonstrate managing the player's treasure
             DemoTreasureManagement(myPlayer, gametreasure);
 
         }
 
-        // TODO 03a - add a method to demonstrate managing the player's treasure
+
         /// <summary>
         /// deonstrate managing the player's treasure
         /// </summary>
         /// <param name="myPlayer"></param>
         public static void DemoTreasureManagement(Player myPlayer, Treasure gameTreasure)
         {
-            // TODO 
+
             InitializeTreasures(gameTreasure);
 
-            // TODO 
             DisplayTreasureTypes(gameTreasure);
 
-            // TODO  - call the method to give the player some coins at the start of the game
             GivePlayerCoins(myPlayer, gameTreasure);
 
-            // TODO  - call the method to display the player's treasure         
             DisplayPlayersTreasure(myPlayer);
 
             Console.WriteLine("Now let's add 25 gold coins.");
             Console.WriteLine("Press the Enter key to continue.");
             Console.ReadLine();
-
-            // TODO  - call the method to add more coins of a specific type to the player's treasure
-            //AddCoinsToPlayer(myPlayer, gameTreasure, Treasure.CoinNames.SmallGoldCoin, 25);
 
             DisplayPlayersTreasure(myPlayer);
 
@@ -51,13 +44,9 @@ namespace Demo_Array_PlayerTreasure
             Console.WriteLine("Press the Enter key to continue.");
             Console.ReadLine();
 
-            // TODO  - call the method to subtract coins of a specific type from the player's treasure
-            //SubtractCoinsFromPlayer(myPlayer, gameTreasure, Treasure.CoinNames.SmallGoldCoin, 10);
-
             DisplayPlayersTreasure(myPlayer);
         }
 
-        // TODO  - add a method to initialze the game treasure types
         /// <summary>
         /// intitialize the type of treasures in the game
         /// </summary>
@@ -66,7 +55,6 @@ namespace Demo_Array_PlayerTreasure
             playerTreasure = new Treasure();
         }
 
-        // TODO  - add a DisplayTreasureTypes method
         /// <summary>
         /// display all of the treasure types
         /// </summary>
@@ -90,7 +78,6 @@ namespace Demo_Array_PlayerTreasure
             Console.ReadLine();
         }
 
-        // TODO  - add a method to give the player some coins at the start of the game
         /// <summary>
         /// give the player some coins to start the game
         /// </summary>
@@ -110,8 +97,6 @@ namespace Demo_Array_PlayerTreasure
 
         }
 
-
-        // TODO  - add a DisplayPlayerTreasure method
         /// <summary>
         /// display all of the currency types
         /// </summary>
@@ -143,14 +128,26 @@ namespace Demo_Array_PlayerTreasure
 
         }
 
-
-        public static void AddCoinsToPlayer(Player myPlayer, Treasure gameTreasure, int quantity)
+        /// <summary>
+        /// add coins to the player inventory
+        /// </summary>
+        /// <param name="myPlayer">Player object</param>
+        /// <param name="gameTreasure">Treasure object</param>
+        /// <param name="quantity">quantity of the coin to add</param>
+        /// <param name="coinType">enum - TypeName of the coin to add</param>
+        public static void AddCoinsToPlayer(Player myPlayer, Treasure gameTreasure, int quantity, Coin.TypeName coinType)
         {
 
         }
 
-
-        public static void SubtractCoinsFromPlayer(Player myPlayer, Treasure gameTreasure, int quantity)
+        /// <summary>
+        /// subrtract coins from the player inventory
+        /// </summary>
+        /// <param name="myPlayer">Player object</param>
+        /// <param name="gameTreasure">Treasure object</param>
+        /// <param name="quantity">quantity of the coin to subrtract</param>
+        /// <param name="coinType">enum - TypeName of the coin to subrtract</param>
+        public static void SubtractCoinsFromPlayer(Player myPlayer, Treasure gameTreasure, int quantity, Coin.TypeName coinType)
         {
 
         }

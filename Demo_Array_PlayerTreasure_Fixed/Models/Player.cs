@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Demo_Array_PlayerTreasure
 {
+    // TODO 02 - add a Player class that derives from the base Character class
     /// <summary>
-    /// base class for player and guests in game
+    /// Player class, inherites from Character class
     /// </summary>
-    public class Character
+    public class Player : Character
     {
         #region ENUMERABLES
 
@@ -18,34 +19,26 @@ namespace Demo_Array_PlayerTreasure
 
         #region FIELDS
 
-        protected string _name;
 
         #endregion
 
         #region PROPERTIES
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        
 
         #endregion
 
         #region CONSTRUCTORS
 
-        public Character()
-        {
-
-        }
-
         /// <summary>
-        /// instantiate a character and set intial properties
+        /// instantiate a player and set intial properties
         /// </summary>
-        /// <param name="name">character name</param>
-        public Character(string name)
+        /// <param name="name">player name</param>
+        public Player(
+            string name)
+            : base(name) // constructor inherits from Character base class constructor 
         {
-            _name = name;
+
+            
         }
 
         #endregion
